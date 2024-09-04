@@ -114,7 +114,7 @@ export class TableComponent {
       alert("hubo n problema al modificar el producto")
     })
 
-    await this.servicioCrud.crearProducto(productoNuevo)
+    await this.servicioCrud.crearProducto(datos)
     .then(producto => {
       alert("Ha agregado un nuevo producto con éxito :)");
 
