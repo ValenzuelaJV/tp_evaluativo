@@ -1,38 +1,54 @@
 import { Injectable } from '@angular/core';
-//servicio en la nube de autentificacion de firebase
+// Servicio de AUTENTIFICACIÓN de FIREBASE
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  // Referenciar Auth de Firebase para inicializarlo
+  constructor(
+    private auth: AngularFireAuth,
+    private servicioFirestore: AngularFirestore
+  ) { }
 
-  constructor(public auth: AngularFireAuth) { }
-  //funcion para el registro
-  registrar(email: string, password: string) {
-    //retorna el valor que es creado con el metodo "create email"
-    return this.auth.createUserWithEmailAndPassword(email, password)
+  // Función para REGISTRO
+  registrar(email: string, password: string){
+    // Retorna nueva información de EMAIL y CONTRASEÑA
+    return this.auth.createUserWithEmailAndPassword(email, password);
   }
-  //funcion de inicio de sesion
-  Iniciosesion(email: string, password: string) {
-    //valida la informacion del usuario y si existe en la coleccion
-    return this.auth.signInWithEmailAndPassword(email, password)
+
+  // Función para INICIO DE SESIÓN
+  iniciarSesion(email: string, password: string){
+    // Validar el email y la contraseña
+    return this.auth.signInWithEmailAndPassword(email, password);
   }
-  //funcion para cerrar sesion
-  cerrarsesion() {
-    //devuelve una promesa vacia - quita token
+
+  // Función para CERRAR SESIÓN
+  cerrarSesion(){
+    // Devolver una promesa vacía
     return this.auth.signOut();
   }
-  //funcion para tomar el uid
+
+  // Función para tomar UID
   async obtenerUid(){
-    const user=await this.auth.currentUser;
-    //si el usuario no respeta e¿la estructura de la interfaz
-    //o si tuvo problemas para el registro -> ejemplo: mal internet
+    // Nos va a generar una promesa, y la constante la va a capturar
+    const user = await this.auth.currentUser;
+
+    /*
+      Si el usuario no respeta la estructura de la interfaz /
+      Si tuvo problemas para el registro -> ej.: mal internet
+    */
     if(user == null){
       return null;
-    }else{
+    } else {
       return user.uid;
     }
   }
 
+  // Función que busca un usuario en la colección de 'usuarios' cuyo correo electrónico coincida con el valor proporcionado
+  obtenerUsuario(email: string){
+    return this.servicioFirestore.collection('usuarios', ref => ref.where('email', '==', email)).get().toPromise();
+  }
 }

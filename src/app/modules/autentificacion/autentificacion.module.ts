@@ -1,35 +1,49 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// ARCHIVO DE RUTAS DEL MÓDULO
 import { AutentificacionRoutingModule } from './autentificacion-routing.module';
-import { RegistroComponent } from './pages/registro/registro.component';
-import { IniciosesionComponent } from './pages/iniciosesion/iniciosesion.component'; 
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import { FormsModule } from '@angular/forms';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
 
+// VISTAS DEL MÓDULO AUTENTIFICACIÓN
+import { RegistroComponent } from './pages/registro/registro.component';
+import { InicioSesionComponent } from './pages/iniciosesion/iniciosesion.component';
+
+// COMPONENTES DE MATERIAL
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+
+// COMPONENTES DE ANGULAR
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     RegistroComponent,
-    IniciosesionComponent
+    InicioSesionComponent
   ],
   imports: [
     CommonModule,
     AutentificacionRoutingModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatSelectModule,
+    // MATERIAL
+    MatIconModule,
     MatInputModule,
-    MatIconModule
-  ],
-  exports:[
     MatFormFieldModule,
-    FormsModule,
+    MatButtonModule,
     MatSelectModule,
-    MatInputModule
-   ]
+    // ANGULAR
+    FormsModule,
+  ],
+  exports: [
+    RegistroComponent,
+    InicioSesionComponent,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    FormsModule
+  ]
 })
 export class AutentificacionModule { }

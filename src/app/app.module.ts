@@ -1,42 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InicioComponent } from './pages/inicio/inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// COMPONENTES GLOBALES
 import { SharedModule } from './modules/shared/shared.module';
-import { MatCardModule } from '@angular/material/card';
-//vinvulaciones importaciones con FIREBASE
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
+// VINCULACIONES/ IMPORTACIONES CON FIREBASE
 import { environment } from 'src/environments/environment';
-import { TopsdiaComponent } from './modules/productos/pages/topsdia/topsdia.component';
-import { TopsnocheComponent } from './modules/productos/pages/topsnoche/topsnoche.component';
-import { PantalonesComponent } from './modules/productos/pages/pantalones/pantalones.component';
-import { CamperasComponent } from './modules/productos/pages/camperas/camperas.component';
+import { AngularFireModule } from '@angular/fire/compat'; // Es para el Cloud Firestore
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // Es para la Autentificación
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // Es para la BD de archivos e imágenes
+
+/** 
+ * npm install firebase --force
+ * npm install @angular/fire --save --force
+*/
 
 @NgModule({
   declarations: [
-    AppComponent,
-    InicioComponent,
-    TopsdiaComponent,
-    TopsnocheComponent,
-    PantalonesComponent,
-    CamperasComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    // COMPONENTES GLOBALES
     SharedModule,
-    AngularFireAuthModule,
+    // Inicializa firebase en nuestro proyecto
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireStorageModule,
-    MatCardModule
+    // Autentificación
+    AngularFireAuthModule,
+    // Storage -> BD de imágenes 
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
