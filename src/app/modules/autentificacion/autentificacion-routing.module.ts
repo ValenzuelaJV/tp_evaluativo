@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+// IMPORTACIÓN A LAS VISTAS DEL MÓDULO AUTENTIFICACIÓN
 import { RegistroComponent } from './pages/registro/registro.component';
 import { InicioSesionComponent } from './pages/iniciosesion/iniciosesion.component';
 

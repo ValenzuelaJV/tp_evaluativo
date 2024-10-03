@@ -6,7 +6,10 @@ import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
 //servio de firestore
 import { FirestoreService } from 'src/app/modules/shared/service/firestore.service';
-
+// Importamos paquetería de criptación
+import * as CryptoJS from 'crypto-js';
+// Importamos paquetería de SweetAlert para alertas personalizadas
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -59,13 +62,22 @@ export class RegistroComponent {
     const res = await this.servicioAuth.registrar(credenciales.email, credenciales.password)
       //el metodo THEN es una promesa que devuelve el mismo valor si todo sale bien
       .then(res => {
-        alert("se pudo registrar con exito")
+        Swal.fire({
+          title: "¡Buen trabajo!",
+          text: "¡Se pudo registrar con éxito! :)",
+          icon: "success"
+        });
+  
         //el metodo NAVIGATE nos redirecciona a otra vista
         this.servicioRutas.navigate(['/inicio'])
       })
       //el metodo CATCH captura una falla y la vuelve error cuando la promesa salga mal
       .catch(error => {
-        alert("hubo un error al registrarse \n" + error)
+        Swal.fire({
+          title: "¡Oh no!",
+          text: "Hubo un problema al registrar el nuevo usuario :(",
+          icon: "error"
+        });
       })
 
     const uid = await this.servicioAuth.obtenerUid();
@@ -75,8 +87,13 @@ export class RegistroComponent {
     //se envia la nueva informacion como un nuevo objeto a la coleccion de usuarios
     //notificamos al nuevo usuario que se registro con exito
 
-    alert("se ha registrado con exito")
-    this.cleaner()
+    this.usuarios.password = CryptoJS.SHA256(this.usuarios.password).toString();
+
+    // this.guardarUsuario() guardaba la información del usuario en la colección
+    this.guardarUsuario();
+
+    // Llamamos a la función limpiarInputs() para que se ejecute
+    this.cleaner();
   }
   async guardarUsuario() {
     this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid)
@@ -97,6 +114,5 @@ export class RegistroComponent {
       rol: this.usuarios.rol = '',
       password: this.usuarios.password = ''
     }
-    alert("se registro correctamente")
   }
 }

@@ -8,8 +8,8 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio-sesion',
-  templateUrl: './inicio-sesion.component.html',
-  styleUrls: ['./inicio-sesion.component.css']
+  templateUrl: './iniciosesion.component.html',
+  styleUrls: ['./iniciosesion.component.css']
 })
 export class InicioSesionComponent {
   hide = true;
