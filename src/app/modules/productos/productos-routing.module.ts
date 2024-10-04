@@ -6,6 +6,7 @@ import { PantalonesComponent } from './pages/pantalones/pantalones.component';
 import { TopsdiaComponent } from './pages/topsdia/topsdia.component';
 import { TopsnocheComponent } from './pages/topsnoche/topsnoche.component';
 import { ProductosComponent } from './pages/productos/productos.component';
+
 const routes: Routes = [
   {
     path:"productos",component:ProductosComponent

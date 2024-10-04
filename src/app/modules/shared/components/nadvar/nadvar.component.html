@@ -15,9 +15,9 @@
 
   <mat-menu #producto="matMenu">
 
-      <button mat-menu-item routerLink="/topsdia">topsDia</button>
+      <button mat-menu-item routerLink="/topsdia">topsdia</button>
       <button mat-menu-item routerLink="/topsnoche">topsNoche</button>
-      <button mat-menu-item routerLink="/pantalon">Parte de abajo</button>
+      <button mat-menu-item routerLink="/pantalones">Parte de abajo</button>
       <button mat-menu-item routerLink="/camperas">camperas</button>
       <button mat-menu-item routerLink="/Productos">productos</button>
   </mat-menu>
@@ -27,7 +27,7 @@
   <button mat-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
   <mat-menu #usuario="matMenu">
     <button mat-menu-item  (click)="iniciar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
-    <button mat-menu-item  (click)="iniciar()" *ngIf="logueado "routerLink="/inicio-sesion">Inicio Sesion</button>
+    <button mat-menu-item  (click)="iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Inicio Sesion</button>
     <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
   </mat-menu>
 
