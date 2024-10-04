@@ -1,0 +1,46 @@
+.example-card {
+    max-width: 300px; /* Limita el ancho de la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta desbordamientos */
+    transition: transform 0.2s; /* Transición suave al hover */
+}
+
+.example-card:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 8px 20px rgb(180, 30, 143); /* Sombra más profunda al hover */
+}
+
+.card-title {
+    font-weight: bold; /* Texto en negrita */
+    color: #333; /* Color del título */
+}
+
+.card-subtitle {
+    color: #888; /* Color más suave para el precio */
+}
+
+.card-image {
+    border-top-left-radius: 10px; /* Bordes redondeados en la parte superior */
+    border-top-right-radius: 10px;
+}
+
+.card-description {
+    color: #555; /* Color del texto de descripción */
+    font-size: 14px; /* Tamaño de fuente */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+.action-button {
+    color: white; /* Color del texto del botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    border-radius: 5px; /* Bordes redondeados en botones */
+    margin: 5px; /* Espacio entre botones */
+    transition: background-color 0.2s; /* Transición suave al hover */
+}
+
+.action-button:hover {
+    background-color: #0056b3; /* Color más oscuro al hover */
+}
+
+ 
+  
