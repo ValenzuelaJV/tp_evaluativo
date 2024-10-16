@@ -3,6 +3,7 @@
     border-radius: 10px; /* Bordes redondeados */
     overflow: hidden; /* Oculta desbordamientos */
     transition: transform 0.2s; /* Transición suave al hover */
+    margin: 16px; /* Ajusta el valor según sea necesario */
 }
 
 .example-card:hover {
@@ -10,37 +11,38 @@
     box-shadow: 0 8px 20px rgb(180, 30, 143); /* Sombra más profunda al hover */
 }
 
-.card-title {
+.titulo {
     font-weight: bold; /* Texto en negrita */
-    color: #333; /* Color del título */
+    color: #414141; /* Color del título */
 }
 
-.card-subtitle {
-    color: #888; /* Color más suave para el precio */
-}
 
 .card-image {
     border-top-left-radius: 10px; /* Bordes redondeados en la parte superior */
     border-top-right-radius: 10px;
 }
-
-.card-description {
-    color: #555; /* Color del texto de descripción */
+.descripcion {
+    color: #e00f9a; /* Color del texto de descripción */
     font-size: 14px; /* Tamaño de fuente */
     line-height: 1.5; /* Espaciado entre líneas */
 }
-
-.action-button {
-    color: white; /* Color del texto del botón */
-    background-color: #007bff; /* Color de fondo del botón */
-    border-radius: 5px; /* Bordes redondeados en botones */
-    margin: 5px; /* Espacio entre botones */
-    transition: background-color 0.2s; /* Transición suave al hover */
+.button {
+    background-color: #af4c9e; /* Color de fondo */
+    color: white; /* Color del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 8px 16px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.3s; /* Efecto de transición */
+}
+.button:hover {
+    background-color: #db82ab; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+  
+.button mat-icon {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
 }
 
-.action-button:hover {
-    background-color: #0056b3; /* Color más oscuro al hover */
-}
+
 
  
   

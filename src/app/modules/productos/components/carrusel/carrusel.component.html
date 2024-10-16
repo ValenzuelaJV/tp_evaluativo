@@ -1,7 +1,7 @@
-<div id="carouselExample" class="carousel slide"></div>
+<div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../../../../../assets/carrusel.jpg" class="d-block w-100" alt="Primer item">
+            <img src="../../../../../assets/Primer_item_carrusel.png" class="d-block w-100" alt="Primer item">
         </div>
         <div class="carousel-item" *ngFor="let producto of productosCarrusel">
             <img src="{{producto.imagen}}" class="d-block w-100" alt="{{producto.alt}}">
@@ -17,8 +17,6 @@
     </button>
 </div>
 <div class="col">
-    <app-card 
-    (productoAgregado)="productoAnadido($event)" 
-    [productoReciente]="product">
+    <app-card  (productoAgregado)="productoAnadido($event)" [productoReciente]="product">
     </app-card>
 </div>
