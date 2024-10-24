@@ -14,9 +14,6 @@ import { CardRopaComponent } from './components/card-ropa/card-ropa.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 
-
-
-
 @NgModule({
   declarations: [
     CamperasComponent,

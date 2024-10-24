@@ -1,10 +1,40 @@
-.container{
+.container {
     display: flex;
-    padding: 10px;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
+    background-color: #f0f4f8;
 }
-.boton{
-    width: 120px;
-    margin: auto;
+
+.row {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3f51b5;
+}
+.boton {
+    width: 100%;
+    background-color: #da169f;
+}
+
+
+
+.form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.boton {
+    width: 100%;
+    font-size: 1.1rem;
 }
