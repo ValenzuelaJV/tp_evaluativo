@@ -38,23 +38,6 @@ export class RegistroComponent {
   ) { }
   //funcion para el registro
   async registrar() {
-    //constante de credenciales, va a resguardar la informacion que ingrese el usuario
-    /*
-    const credenciales = {
-      uid: this.usuarios.uid,
-      nombre: this.usuarios.nombre,
-      apellido: this.usuarios.apellido,
-      email: this.usuarios.email,
-      rol: this.usuarios.rol,
-      password: this.usuarios.password
-
-    }
-
-    this.colecctionUsuario.push(credenciales);
-
-    console.log(credenciales);
-    console.log(this.colecctionUsuario)
-    */
     const credenciales = {
       email: this.usuarios.email,
       password: this.usuarios.password
@@ -93,25 +76,26 @@ export class RegistroComponent {
     this.guardarUsuario();
 
     // Llamamos a la función limpiarInputs() para que se ejecute
-    this.cleaner();
+    this. limpiarInputs();
   }
+  // función para agregar NUEVO USUARIO
   async guardarUsuario() {
     this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid)
-      .then(res => {
-        console.log(this.usuarios);
-      })
-      .catch(err => {
-        console.log('Error =>', err);
-      })
+    .then(res => {
+      console.log(this.usuarios);
+    })
+    .catch(err => {
+      console.log('Error =>', err);
+    })
   }
   //funcion para limpiar los inputs
-  cleaner() {
+  limpiarInputs() {
     const input = {
       uid: this.usuarios.uid = '',
       nombre: this.usuarios.nombre = '',
       apellido: this.usuarios.apellido = '',
       email: this.usuarios.email = '',
-      rol: this.usuarios.rol = '',
+      rol: this.usuarios.rol = 'vis',
       password: this.usuarios.password = ''
     }
   }

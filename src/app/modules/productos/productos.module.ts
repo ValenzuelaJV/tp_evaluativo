@@ -12,6 +12,7 @@ import { CamperasComponent } from './pages/camperas/camperas.component';
 import { CardComponent } from './components/card/card.component';
 import { CardRopaComponent } from './components/card-ropa/card-ropa.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
+import { ProductosComponent } from './pages/productos/productos.component';
 
 
 
@@ -24,7 +25,8 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
     TopsnocheComponent,
     CardRopaComponent,
     CardComponent,
-    CarruselComponent 
+    CarruselComponent,
+    ProductosComponent
   ],
   imports: [
     CommonModule,
@@ -33,14 +35,15 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
   ],
 
   exports: [
-   
+   CarruselComponent,
     CamperasComponent,
     PantalonesComponent,
     TopsdiaComponent, 
     TopsnocheComponent,
     CardComponent,
     CardRopaComponent,
-    MatTabsModule
+    MatTabsModule,
+    ProductosComponent
   ]
 })
 export class ProductosModule { }

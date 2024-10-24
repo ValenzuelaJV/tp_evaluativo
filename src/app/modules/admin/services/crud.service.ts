@@ -2,21 +2,32 @@ import { Injectable } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs';
-
-
+// Importaciones para el manejo de archivos y referencias de Storage
+import { getDownloadURL, getStorage, ref, UploadResult, uploadString, deleteObject } from 'firebase/storage';
+/*
+  getDownloadURL -> Para obtener la URL de descarga de una imagen subida
+  getStorage -> Para obtener la instancia de almacenamiento
+  ref -> Para crear referencias a ubicaciones en el almacenamiento
+  UploadResult -> Tipo que representa el resultado de una operación subida
+  uploadString -> Para subir imágenes en formato de cadena (string)
+  deleteObject -> Para eliminar un espacio en el almacenamiento
+*/
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
   //definimos colecccion para los rpoductos de la web del tipo producto
  private productosCollection: AngularFirestoreCollection<Producto>
-
+ // Definimos variable "respuesta" que podrá subir resultados
+ private respuesta!: UploadResult;
+ // Inicializamos servicio de Storage
+ private storage = getStorage();
   constructor(private database: AngularFirestore) { 
     //referenciamos coleccion productos y sera subida como "productos" a firebase
     this.productosCollection = database.collection('producto');
   }
   //crear productos
-  crearProducto(producto: Producto){
+  crearProducto(producto: Producto,  url: string){
     return new Promise(async (resolve, reject) => {
       try{
         //creamos numero identificativo para el rpoducto en la base de datos
@@ -26,6 +37,9 @@ export class CrudService {
         producto.idProducto = idProducto;
 
         const resultado = await this.productosCollection.doc(idProducto).set(producto);
+
+        // Asignamos URL recibida del parámetro al atributo imagen de la interfaz Producto
+        producto.imagen = url;
 
         resolve(resultado);
       }catch(error){
@@ -50,16 +64,66 @@ export class CrudService {
    return this.database.collection('producto').doc(idProducto).update(nuevaData);
  }
 
-  //eliminar productos
-  eliminarProducto(idProducto: string){
-    return new Promise((resolve,reject) => {
+   // ELIMINAR productos
+   eliminarProducto(idProducto: string, imagenUrl: string){
+    return new Promise((resolve, reject) => {
       try{
-        const respuesta = this.productosCollection.doc(idProducto).delete();
-        resolve(respuesta);
+        // Definimos referencia local de Storage en el bloque "try"
+        const storage = getStorage();
+
+        // Definimos referencia local desde el almacenamiento de Storage
+        const referenciaImagen = ref(storage, imagenUrl);
+
+        // Eliminamos la imagen desde el almacenamiento
+        deleteObject(referenciaImagen)
+        .then((res) => {
+          // Accedo a la colección, busco su ID y lo elimino
+          const respuesta = this.productosCollection.doc(idProducto).delete();
+          resolve(respuesta);
+        })
+        .catch(error => {
+          reject("Error al eliminar la imagen: \n"+error);
+        })
       }
       catch(error){
         reject(error);
       }
     })
+  }
+
+  // OBTENER url de las imágenes
+  obtenerUrlImagen(respuesta: UploadResult){
+    // Retorna URL obtnenida como REFERENCIA
+    return getDownloadURL(respuesta.ref);
+  }
+
+  /**
+   * PARÁMETROS DEFINIDOS
+   * @param {string} nombre <- nombre de la imagen
+   * @param {any} imagen <- tipo de imágenes que se pueden subir (extension)
+   * @param {string} ruta <- ruta de almacenamiento de las imágenes
+   * @returns <- se retorna lo obtenido
+  */
+
+  // SUBIR imágenes con sus referencias
+  async subirImagen(nombre: string, imagen: any, ruta: string){
+    try{
+      // Crear una referencia de imagen
+      // accede a Storage (almacenamiento), ruta (carpeta) / nombre (nombreImagen)
+      let referenciaImagen = ref(this.storage, ruta + '/' + nombre);
+
+      // Asignamos a la respuesta la información de la imagen subida
+      this.respuesta = await uploadString(referenciaImagen, imagen, 'data_url')
+      .then(resp => {
+        return resp;
+      })
+
+      return this.respuesta;
+    }
+    catch(error){
+      console.log("Error: \n"+error);
+
+      return this.respuesta;
+    }
   }
 }

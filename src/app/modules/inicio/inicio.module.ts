@@ -10,6 +10,7 @@ import { CardComponent } from './components/card/card.component';
 // COMPONENTES QUE IMPORTAMOS DESDE MATERIAL
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+
 import { InicioRoutingModule } from './inicio-routing.module';
 
 @NgModule({

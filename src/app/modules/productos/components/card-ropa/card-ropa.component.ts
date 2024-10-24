@@ -32,10 +32,10 @@ export class CardRopaComponent {
  mostrarProductoRopa(){
    // forEach: itera la colección
    this.coleccionProductos.forEach(producto => {
-     // Si la categoría del producto es igual a "juguetes", se enviará a la 
-     // colección de juguetes específicada
+     // Si la categoría del producto es igual a "ropa", se enviará a la 
+     // colección de ropa específicada
 
-     if(producto.categoria === "juguetes"){
+     if(producto.categoria === "ropa"){
        // .push: sube o agrega un item a una colección
        this.coleccionRopa.push(producto);
      }

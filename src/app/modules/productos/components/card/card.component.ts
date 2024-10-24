@@ -42,9 +42,4 @@ export class CardComponent {
    // Guarda información de un producto elegido por el usuario
    this.productoSeleccionado = info;
   }
- 
- agregarProducto(info:Producto){
-   this.productoAgregado.emit(info);
-   this.compraVisible = true;
- }
 }
