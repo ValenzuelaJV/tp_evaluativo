@@ -7,8 +7,10 @@
     <button mat-menu-item routerLink="/inicio">Inicio</button>
     <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
   </mat-menu>
-
-  <span>My App</span>
+ <div class="logo-container">
+  <img src="../../../../../assets/Logo.png" alt="Logo" class="logo">
+ </div>
+  
 
   <mat-menu #producto="matMenu">
 
@@ -33,5 +35,7 @@
     <mat-icon>favorite</mat-icon>
   </button>
 
-
+  <!--Label Para Modo Oscuro-->
+   <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
+  <input type="checkbox" id="toggle" (click)="cambiarFondo()">
 </mat-toolbar>
