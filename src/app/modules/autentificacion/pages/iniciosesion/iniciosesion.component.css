@@ -18,8 +18,11 @@
 }
 
 .title {
+    font-family: initial;
+    text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #da169f;
 }
 
 .form-field {
@@ -29,5 +32,13 @@
 
 .boton {
     width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
     background-color: #da169f;
 }
+.material-icons{
+    text-align: center;
+    color: #da169f;
+}
+  

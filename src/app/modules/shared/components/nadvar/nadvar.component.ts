@@ -32,3 +32,4 @@ export class NadvarComponent {
     this.logueado = true;
   }
 }
+

@@ -41,7 +41,11 @@
 .button mat-icon {
     margin-right: 8px; /* Espacio entre el icono y el texto */
 }
-
+.carousel {
+    height: 100%; /* Altura fija */
+    width: 100%; /* Ancho completo */
+    object-fit: cover; /* Recortar la imagen si es necesario */
+}
 
 
  
