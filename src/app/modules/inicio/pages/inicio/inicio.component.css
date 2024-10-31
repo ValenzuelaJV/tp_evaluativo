@@ -25,10 +25,11 @@
     color: #e00f9a; /* Color del texto de descripción */
     font-size: 14px; /* Tamaño de fuente */
     line-height: 1.5; /* Espaciado entre líneas */
+    
 }
 .button {
-    background-color: #af4c9e; /* Color de fondo */
-    color: white; /* Color del texto */
+    background-color: #740036; /* Color de fondo */
+    color: rgb(255, 255, 255); /* Color del texto */
     border-radius: 8px; /* Bordes redondeados */
     padding: 8px 16px; /* Espaciado interno */
     transition: background-color 0.3s, transform 0.3s; /* Efecto de transición */
@@ -42,6 +43,22 @@
     margin-right: 8px; /* Espacio entre el icono y el texto */
 }
 
+
+.col-lg-4 {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas dentro de cada columna */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+.row{
+    display: flex;
+    justify-content: space-around; /* Espacio uniforme entre tarjetas */
+    width: 100%;
+}
+.carouselExample{
+    width: 100%; /* Ajusta el ancho según lo necesites */
+    height: 100px;
+    margin:  auto; /* Centra el carrusel */
+}
 
 
  

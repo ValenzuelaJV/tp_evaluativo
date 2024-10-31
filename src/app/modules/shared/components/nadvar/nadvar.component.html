@@ -20,10 +20,12 @@
       <button mat-menu-item routerLink="/camperas">camperas</button>
       <button mat-menu-item routerLink="/Productos">productos</button>
   </mat-menu>
+   
+   <button id="menuAdmin"  mat-button routerLink="/admin">Admin</button>
 
   <span class="example-spacer"></span>
 
-  <button mat-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+  <button mat-button id="inicio" [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
   <mat-menu #usuario="matMenu">
     <button mat-menu-item  (click)="iniciar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
     <button mat-menu-item  (click)="iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Inicio Sesion</button>

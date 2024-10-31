@@ -95,6 +95,7 @@ export class TableComponent {
     this.productoSeleccionado = productoSeleccionado;
   }
 
+
   // Función para eliminar definitivamente al producto
   borrarProducto() {
     // Envía ID del producto eliminado y la ubicación en el almacenamiento de STORAGE

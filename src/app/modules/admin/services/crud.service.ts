@@ -34,12 +34,14 @@ export class CrudService {
         const idProducto = this.database.createId();
 
         //asignamos ID creado al atributo idProducto de la iterfaz "Producto"
-        producto.idProducto = idProducto;
-
-        const resultado = await this.productosCollection.doc(idProducto).set(producto);
+        producto.idProducto = idProducto
 
         // Asignamos URL recibida del parámetro al atributo imagen de la interfaz Producto
         producto.imagen = url;
+
+        const resultado = await this.productosCollection.doc(idProducto).set(producto);
+
+        
 
         resolve(resultado);
       }catch(error){

@@ -33,10 +33,7 @@
             data-bs-toggle="modal" data-bs-target="#editarProducto" (click)="mostrarEditar(producto)">
             <mat-icon>edit</mat-icon>
           </button>
-        </td>
-
-        <!-- ELIMINAR -->
-        <td>
+       
           <!-- mostrarBorrar() recibe como parametro el producto seleccionado o iterado en esa fila -->
           <button id="btn-delete" title="eliminar" type="button" class="btn btn-outline-danger"
             data-bs-toggle="modal" data-bs-target="#eliminarProducto" (click)="mostrarBorrar(producto)">
@@ -94,9 +91,17 @@
               </div>
 
               <div class="mb-3">
-                  <label class="form-label">Ingrese una imagen:</label>
-                  <input class="form-control" type="text" formControlName="imagen"
-                      placeholder="Ingrese vínculo de una imagen">
+                <label class="form-label">Ingrese una imagen:</label>
+                <!-- <input class="form-control" type="text" formControlName="imagen"
+                    placeholder="Ingrese vínculo de una imagen"> -->
+                
+                <!--
+                    type="file" -> recibe archivos
+                    accept="imagen/*" -> acepte todo tipo de extensiones (jpg, png, pdf, doc, gif)
+                    (change)="cargarImagen($event)" -> ejecuta el evento de cargarImagen que definimos 
+                    en la lógica del componente
+                -->
+                <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
               </div>
 
               <div class="mb-3">
@@ -159,8 +164,9 @@
 
        <div class="mb-3">
          <label class="form-label">Ingrese una imagen:</label>
-         <input class="form-control" type="text" formControlName="imagen"
-          placeholder="{{productoEdit.imagen}}">
+         <!-- <input class="form-control" type="text" formControlName="imagen"
+            placeholder="{{productoEdit.imagen}}"> -->
+         <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
        </div>
 
         <div class="mb-3">
@@ -178,30 +184,30 @@
  </div>
 </div>
 
- <!--modal para eliminar producto-->
-<!-- Modal -->
-<div class="modal fade" *ngIf="modalVisibleProducto" id="eliminarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <!-- MODAL PARA ELIMINAR PRODUCTO -->
+<div class="modal fade" id="eliminarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-       <!-- ENCABEZADO -->
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">esta seguro de eliminar el producto?</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <!-- CUERPO DEL MODAL -->
-      <div class="modal-body">
-        <!-- Mostramos al usuario información del producto que quiere eliminar -->  
+      <div class="modal-content">
+          <!-- ENCABEZADO -->
+          <div class="modal-header" *ngIf="modalVisibleProducto">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">¿Está seguro de eliminar el producto?</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
 
-        {{productoSeleccionado.nombre}}
- 
-        <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}" width="100px" >
+          <!-- CUERPO DEL MODAL -->
+          <div class="modal-body" *ngIf="modalVisibleProducto">
+              <!-- Mostramos al usuario información del producto que quiere eliminar -->
+               
+              {{productoSeleccionado.nombre}}
+
+              <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}" width="100px">
+          </div>
+          
+          <!-- ACCIONES DEL MODAL -->
+          <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" (click)="borrarProducto()">Eliminar</button>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
       </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="borrarProducto()">Eliminar</button>
-        <button type="button" class="btn btn-online-secondary" data-bs-dismiss="modal">cerrar</button>
-      </div>
-    </div>
   </div>
-</div>  
- 
+</div>
