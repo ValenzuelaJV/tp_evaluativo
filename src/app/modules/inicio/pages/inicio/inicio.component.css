@@ -54,10 +54,41 @@
     justify-content: space-around; /* Espacio uniforme entre tarjetas */
     width: 100%;
 }
-.carouselExample{
+.modificar{
     width: 100%; /* Ajusta el ancho según lo necesites */
-    height: 100px;
     margin:  auto; /* Centra el carrusel */
+}
+.tituloo{
+  text-align: center;
+  color: #740036;
+  margin: 20px;
+}
+.carrusel-container {
+    overflow: hidden;
+    width: 100%; /* Tamaño del contenedor del carrusel */
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.carrusel {
+    display: flex;
+    animation: moverCarrusel 20s linear infinite; /* Animación de desplazamiento */
+}
+
+.carrusel span {
+    font-size: 2rem;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+/* Animación del movimiento del carrusel */
+@keyframes moverCarrusel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 

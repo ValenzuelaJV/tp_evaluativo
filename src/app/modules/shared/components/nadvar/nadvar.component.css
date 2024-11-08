@@ -6,8 +6,7 @@
 }
 .example-spacer {
     flex: 1 1 auto;
-}
-
+}  
 /*
     1) Tomi: Permite crear e implementar diseños según el dispositivo que estás usando
     2) Thiago: Técnica introducida por CSS3 para aplicar propiedades según condiciones V o F
@@ -26,7 +25,6 @@
         display: none;
     }
 }
-
 /* DISPOSITIVOS MÁS GRANDES (ej.: computadora) */
 @media (min-width: 700px) {
     mat-toolbar{
@@ -40,8 +38,10 @@
 .logo-container {
     text-align: center; /* Centra el logo */
     margin: 20px 0; /* Espacio arriba y abajo */
+    display: flex; /* Activamos el modelo Flexbox en el body */
+    justify-content: center; /* Centra horizontalmente el contenedor */
+    align-items: center; /* Centra verticalmente el contenedor */
 }
-
 .logo {
     max-width: 150px; /* Ajusta el tamaño según tus necesidades */
     height: auto; /* Mantiene la proporción */
@@ -49,3 +49,4 @@
 .example-icon {
     margin-right: 20px; /* Espacio a la derecha del botón */
 }
+    
