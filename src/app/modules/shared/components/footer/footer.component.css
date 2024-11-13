@@ -1,28 +1,24 @@
 .footer {
     background-color: #790729; /* Color de fondo */
-    color: #fff; /* Color del texto */
     padding: 20px 0; /* Espaciado superior e inferior */
-  }
-  
-  .footer .container {
+}
+
+.container {
     max-width: 1200px; /* Ancho máximo */
     margin: 0 auto; /* Centrar el contenido */
-  }
+    color: aliceblue;
+}
   
-  .footer .row {
+.row {
     display: flex; /* Usar flexbox para distribución */
     justify-content: space-between; /* Espacio entre columnas */
-  }
+}
   
-.footer .col {
+.col {
     flex: 1; /* Cada columna ocupa espacio igual */
     padding: 0 20px; /* Espaciado horizontal */
 }
-  
-.footer h5 {
-    margin-bottom: 15px; /* Espacio debajo del título */
-}
-  
+ 
 .footer ul {
     list-style: none; /* Sin viñetas */
     padding: 0; /* Sin padding */
@@ -30,19 +26,12 @@
   
 .footer ul li {
     margin-bottom: 10px; /* Espacio entre enlaces */
-}
-  
-.footer a {
-    color: #fff; /* Color de los enlaces */
-    text-decoration: none; /* Sin subrayado */
-}
-  
-.footer a:hover {
-    text-decoration: underline; /* Subrayado al pasar el mouse */
+   
 }
 
 .social-icons {
     display: flex; /* Distribuir iconos horizontalmente */
+    
 }
   
 .social-icons li {
@@ -52,4 +41,14 @@
 .text-center {
     text-align: center; /* Centrar el texto */
     margin-top: 20px; /* Espacio superior */
+
+}
+.p{
+    color: aliceblue;
+}
+.p2{
+    color: aliceblue;
+}
+.h5{
+    color: aliceblue;
 }

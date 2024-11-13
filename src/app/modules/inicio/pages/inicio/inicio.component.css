@@ -1,50 +1,48 @@
 .example-card {
     max-width: 300px; /* Limita el ancho de la tarjeta */
-    border-radius: 10px; /* Bordes redondeados */
     overflow: hidden; /* Oculta desbordamientos */
     transition: transform 0.2s; /* Transición suave al hover */
     margin: 16px; /* Ajusta el valor según sea necesario */
 }
-
 .example-card:hover {
     transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
     box-shadow: 0 8px 20px rgb(180, 30, 143); /* Sombra más profunda al hover */
 }
-
 .titulo {
     font-weight: bold; /* Texto en negrita */
-    color: #414141; /* Color del título */
+    color: #000000; /* Color del título */
+    text-align: center;
+    
 }
-
-
 .card-image {
     border-top-left-radius: 10px; /* Bordes redondeados en la parte superior */
     border-top-right-radius: 10px;
 }
 .descripcion {
-    color: #e00f9a; /* Color del texto de descripción */
+    color: #000000; /* Color del texto de descripción */
     font-size: 14px; /* Tamaño de fuente */
     line-height: 1.5; /* Espaciado entre líneas */
-    
+}
+.rojo{
+    color: red;
 }
 .button {
-    background-color: #740036; /* Color de fondo */
-    color: rgb(255, 255, 255); /* Color del texto */
-    border-radius: 8px; /* Bordes redondeados */
+    background-color: #85011d; /* Color de fondo */ 
+     border: none; /* Sin borde */
     padding: 8px 16px; /* Espaciado interno */
     transition: background-color 0.3s, transform 0.3s; /* Efecto de transición */
+    margin-left: auto; /* Empuja el botón a la derecha */
+    
 }
 .button:hover {
     background-color: #db82ab; /* Color de fondo al pasar el ratón */
     transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-}
-  
+   
+} 
 .button mat-icon {
     margin-right: 8px; /* Espacio entre el icono y el texto */
 }
-
-
-.col-lg-4 {
+.col-lg-3 {
     display: flex;
     justify-content: center; /* Centra las tarjetas dentro de cada columna */
     margin-bottom: 20px; /* Espaciado inferior */
@@ -63,31 +61,38 @@
   color: #740036;
   margin: 20px;
 }
+/* Contenedor principal del carrusel */
 .carrusel-container {
-    overflow: hidden;
-    width: 100%; /* Tamaño del contenedor del carrusel */
-    border: 1px solid #ccc;
-    padding: 10px;
+    width: 100%;
+    background-color: #7e001f; /* Fondo naranja */
+ 
+    overflow: hidden; /* Ocultar cualquier contenido que se salga del contenedor */
+    padding: 10px 0; /* Espaciado vertical */
 }
 
+/* Carrusel (el div que contiene los textos) */
 .carrusel {
-    display: flex;
-    animation: moverCarrusel 20s linear infinite; /* Animación de desplazamiento */
+    display: flex; /* Usamos flexbox para organizar los items en fila */
+    white-space: nowrap; /* Evitar que los elementos se rompan en varias líneas */
+    animation: scroll-text 30s linear infinite; /* Animación que hace el deslizamiento */
 }
 
+/* Estilo de cada mensaje */
 .carrusel span {
-    font-size: 2rem;
-    margin-right: 20px;
-    white-space: nowrap;
+    padding: 0 30px; /* Espaciado entre los textos */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight:lighter; /* Hacer el texto en negrita */
+    display: inline-block;
+    color: white; /* Texto blanco */
 }
 
-/* Animación del movimiento del carrusel */
-@keyframes moverCarrusel {
+/* Efecto de deslizamiento */
+@keyframes scroll-text {
     0% {
-        transform: translateX(0);
+        transform: translateX(100%); /* Comienza desde fuera de la pantalla (derecha) */
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-100%); /* Termina fuera de la pantalla (izquierda) */
     }
 }
 
