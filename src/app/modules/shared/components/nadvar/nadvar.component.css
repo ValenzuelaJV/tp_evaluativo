@@ -50,3 +50,37 @@
     margin-right: 20px; /* Espacio a la derecha del botón */
 }
     
+/* Contenedor principal del carrusel */
+.carrusel-container {
+    width: 100%;
+    background-color: #000000; /* Fondo naranja */
+    height: 30px;
+    overflow: hidden; /* Ocultar cualquier contenido que se salga del contenedor */
+    padding: 10px 0; /* Espaciado vertical */
+}
+
+/* Carrusel (el div que contiene los textos) */
+.carrusel {
+    display: flex; /* Usamos flexbox para organizar los items en fila */
+    white-space: nowrap; /* Evitar que los elementos se rompan en varias líneas */
+    animation: scroll-text 30s linear infinite; /* Animación que hace el deslizamiento */
+}
+
+/* Estilo de cada mensaje */
+.carrusel span {
+    padding: 0 30px; /* Espaciado entre los textos */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight:lighter; /* Hacer el texto en negrita */
+    display: inline-block;
+    color: rgb(255, 255, 255); /* Texto blanco */
+}
+
+/* Efecto de deslizamiento */
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%); /* Comienza desde fuera de la pantalla (derecha) */
+    }
+    100% {
+        transform: translateX(-100%); /* Termina fuera de la pantalla (izquierda) */
+    }
+}

@@ -6,7 +6,7 @@
 }
 .example-card:hover {
     transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
-    box-shadow: 0 8px 20px rgb(180, 30, 143); /* Sombra más profunda al hover */
+    box-shadow: 0 8px 20px rgb(180, 53, 30); /* Sombra más profunda al hover */
 }
 .titulo {
     font-weight: bold; /* Texto en negrita */
@@ -24,10 +24,10 @@
     line-height: 1.5; /* Espaciado entre líneas */
 }
 .rojo{
-    color: red;
+    color: rgb(194, 8, 8);
 }
 .button {
-    background-color: #85011d; /* Color de fondo */ 
+
      border: none; /* Sin borde */
     padding: 8px 16px; /* Espaciado interno */
     transition: background-color 0.3s, transform 0.3s; /* Efecto de transición */
@@ -35,7 +35,7 @@
     
 }
 .button:hover {
-    background-color: #db82ab; /* Color de fondo al pasar el ratón */
+    background-color: #a30124; /* Color de fondo al pasar el ratón */
     transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
    
 } 
@@ -98,4 +98,6 @@
 
 
  
-  
+              
+
+

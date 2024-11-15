@@ -12,7 +12,8 @@ import { SharedModule } from './modules/shared/shared.module';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat'; // Es para el Cloud Firestore
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // Es para la Autentificación
-import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // Es para la BD de archivos e imágenes
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { PedidoComponent } from './modules/carrito/components/pedido/pedido.component'; // Es para la BD de archivos e imágenes
 
 /** 
  * npm install firebase --force
@@ -21,7 +22,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // Es p
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PedidoComponent
   ],
   imports: [
     BrowserModule,
