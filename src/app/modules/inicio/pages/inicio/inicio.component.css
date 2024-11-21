@@ -6,7 +6,7 @@
 }
 .example-card:hover {
     transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
-    box-shadow: 0 8px 20px rgb(180, 53, 30); /* Sombra más profunda al hover */
+    box-shadow: 0 8px 20px #7e001f; /* Sombra más profunda al hover */
 }
 .titulo {
     font-weight: bold; /* Texto en negrita */
@@ -58,7 +58,7 @@
 }
 .tituloo{
   text-align: center;
-  color: #740036;
+  color:#7e001f;
   margin: 20px;
 }
 /* Contenedor principal del carrusel */

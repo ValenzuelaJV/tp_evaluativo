@@ -1,0 +1,22 @@
+<!-- Card para mostrar TODOS los productos que se hayan ingresado -->
+
+<!-- Contenedor de fila para organizar las tarjetas de productos -->
+<!-- 'row' es una clase de Bootstrap que organiza los elementos en filas -->
+<div class="row g-4">
+    <div class="col" *ngFor="let producto of coleccionCamperas">
+        <div class="card product-card" style="width: 18rem;">
+            <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
+
+           <!-- Cuerpo de la tarjeta, donde se muestran los detalles del producto -->
+            <div class="card-body">
+                <h5 class="card-title">{{producto.nombre}}</h5>
+                <p class="card-text">{{producto.precio}}</p>
+
+                <button type="button" class="btn boton btn-outline-primary" data-bs-toggle="modal" 
+                data-bs-target="#modalCardRopa" (click)="mostrarVer(producto)">
+                Agregar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

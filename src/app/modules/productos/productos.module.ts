@@ -12,6 +12,10 @@ import { CamperasComponent } from './pages/camperas/camperas.component';
 import { CardComponent } from './components/card/card.component';
 import { CardRopaComponent } from './components/card-ropa/card-ropa.component';
 import { ProductosComponent } from './pages/productos/productos.component';
+import { CardPantalonesComponent } from './components/card-pantalones/card-pantalones.component';
+import { CardCamperasComponent } from './components/card-camperas/card-camperas.component';
+import { CardTpsdiaComponent } from './components/card-tpsdia/card-tpsdia.component';
+import { CardTopsnocheComponent } from './components/card-topsnoche/card-topsnoche.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ProductosComponent } from './pages/productos/productos.component';
     TopsnocheComponent,
     CardRopaComponent,
     CardComponent,
-    ProductosComponent
+    ProductosComponent,
+    CardPantalonesComponent,
+    CardCamperasComponent,
+    CardTpsdiaComponent,
+    CardTopsnocheComponent
   ],
   imports: [
     CommonModule,

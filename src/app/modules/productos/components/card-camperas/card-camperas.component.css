@@ -1,0 +1,20 @@
+/* Efecto de hover para la tarjeta */
+.product-card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta cuando se pasa el ratón */
+    box-shadow: 0 10px 15px rgba(151, 4, 48, 0.884); /* Sombra más fuerte */
+  }
+.card-text {
+    color: red;
+}
+.boton{
+    color: brown;
+    border: none; /* Sin borde */
+    padding: 8px 16px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.3s; /* Efecto de transición */
+    margin-left: auto; /* Empuja el botón a la derecha */
+}
+.button:hover {
+    background-color: #a30124; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+   
+} 
