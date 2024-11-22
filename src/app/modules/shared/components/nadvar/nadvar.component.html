@@ -6,6 +6,7 @@
   <mat-menu #secciones="matMenu">
     <button mat-menu-item routerLink="/inicio">Inicio</button>
     <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+    <button id="menuAdmin"  mat-button routerLink="/admin">Admin</button>
   </mat-menu>
  <div class="logo-container">
   <img src="../../../../../assets/LOGO-removebg.png" alt="Logo" class="logo">
@@ -19,8 +20,6 @@
     <button mat-menu-item routerLink="/camperas">camperas</button>
     <button mat-menu-item routerLink="/productos">productos</button>
   </mat-menu>
-   
-   <button id="menuAdmin"  mat-button routerLink="/admin">Admin</button>
 
   <span class="example-spacer"></span>
 
@@ -30,7 +29,6 @@
     <button mat-menu-item  (click)="iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Inicio Sesion</button>
     <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
   </mat-menu>
-
 
   <!--Label Para Modo Oscuro-->
    <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>

@@ -1,0 +1,59 @@
+/* Estilo general para las tarjetas */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden; /* Para evitar que las imágenes sobresalgan */
+
+}
+
+/* Efecto al pasar el ratón sobre la tarjeta */
+.card:hover {
+    transform: translateY(-10px); /* Sube la tarjeta al hacer hover */
+    box-shadow: 0 6px 12px rgb(151, 3, 35);
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 20px;
+   
+}
+
+/* Título del producto */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+/* Precio del producto */
+.precio {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #810404;
+    margin-bottom: 15px;
+}
+
+/* Botón */
+.boton {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #99041d;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-left: auto; /* Empuja el botón a la derecha */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.boton:hover {
+    background-color: #e60e73;
+}
+
+/* Estilo para los márgenes entre las tarjetas */
+.row {
+    margin-top: 20px;
+}

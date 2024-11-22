@@ -17,6 +17,7 @@
 .col {
     flex: 1; /* Cada columna ocupa espacio igual */
     padding: 0 20px; /* Espaciado horizontal */
+    color: white;
 }
  
 .footer ul {
@@ -36,6 +37,7 @@
   
 .social-icons li {
     margin-right: 15px; /* Espacio entre iconos */
+ 
 }
   
 .text-center {
@@ -51,4 +53,9 @@
 }
 .h5{
     color: aliceblue;
+}
+.social-icons i {
+    color: #fffefe;  /* Color negro por defecto */
+    font-size: 24px;  /* Tamaño del icono */
+    transition: color 0.3s ease; /* Transición suave cuando cambia el color */
 }
